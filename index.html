@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAR ARM LOGISTICS GROUP | Professional Freight</title>
+    <title>KAR ARM GROUP | Միջազգային Բեռնափոխադրումներ</title>
     
     <link rel="icon" type="image/jpg" href="photo_5372924575026454378_x.jpg">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
             --gold: #c5a059;
             --black: #0a0a0b;
-            --anthracite: #1a1f25; 
-            --dark-card: #1c1c1e;
+            --anthracite: #121519; 
             --white: #ffffff;
-            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--black); color: var(--white); overflow-x: hidden; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--black); color: var(--white); line-height: 1.6; }
 
-        /* --- LANGUAGE LOGIC (Pure CSS) --- */
+        /* --- LANGUAGE LOGIC --- */
         input[name="lang"] { display: none; }
         #lang-arm:checked ~ * .lang-ru, #lang-arm:checked ~ * .lang-en { display: none; }
         #lang-ru:checked ~ * .lang-arm, #lang-ru:checked ~ * .lang-en { display: none; }
@@ -32,82 +31,81 @@
         /* --- HEADER --- */
         header {
             background: rgba(10, 10, 11, 0.95);
-            backdrop-filter: blur(10px);
             position: fixed; width: 100%; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            padding: 10px 0;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            padding: 15px 0;
         }
-        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 25px; }
-        .logo-box img { height: 65px; border-radius: 5px; border: 1px solid var(--gold); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo img { height: 50px; border-radius: 5px; }
 
-        .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
-        .address-top { font-size: 0.75rem; color: var(--gold); font-weight: 700; letter-spacing: 2px; }
-        .menu-row { display: flex; align-items: center; gap: 20px; }
-        
-        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; margin-right: 15px; transition: var(--transition); }
+        .nav-links a { text-decoration: none; color: var(--white); font-size: 0.8rem; font-weight: 500; margin-left: 30px; transition: var(--transition); text-transform: uppercase; }
         .nav-links a:hover { color: var(--gold); }
 
-        .btn-call { background: var(--gold); color: #000; padding: 8px 18px; border-radius: 4px; font-weight: 700; font-size: 0.7rem; text-decoration: none; transition: var(--transition); text-transform: uppercase; }
-        .btn-call:hover { background: #fff; transform: scale(1.05); }
-
-        /* Flags */
-        .flag-switcher { display: flex; gap: 8px; padding-left: 15px; border-left: 1px solid #333; }
-        .flag-switcher label { cursor: pointer; opacity: 0.4; transition: var(--transition); filter: grayscale(100%); }
-        .flag-switcher label img { width: 26px; height: 26px; border-radius: 50%; border: 2px solid transparent; }
-        #lang-arm:checked ~ header .f-arm, #lang-ru:checked ~ header .f-ru, #lang-en:checked ~ header .f-en { opacity: 1; filter: grayscale(0%); transform: scale(1.15); }
-        #lang-arm:checked ~ header .f-arm img, #lang-ru:checked ~ header .f-ru img, #lang-en:checked ~ header .f-en img { border-color: var(--gold); }
-
-        /* --- HERO --- */
+        /* --- HERO SECTION --- */
         .hero {
-            height: 90vh;
-            /* 🛑 2. ՀԵՏՆԱՇԵՐՏԻ ՆԿԱՐ (ՖՈՒՌԻ ՆԿԱՐԸ) */
-            background: linear-gradient(rgba(10, 10, 11, 0.4), rgba(10, 10, 11, 0.7)), url('photo_5372924575026454377_y.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            display: flex; align-items: center; justify-content: center; text-align: center;
+            height: 100vh;
+            /* 🛑 2. ԳԼԽԱՎՈՐ ՖՈՆԻ ՆԿԱՐԸ */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('photo_5372924575026454377_y.jpg');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            padding: 0 20px;
         }
-        .hero-h1 { font-size: clamp(1.8rem, 6vw, 3.8rem); text-transform: uppercase; letter-spacing: 4px; line-height: 1.1; }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); font-weight: 700; text-transform: uppercase; margin-bottom: 20px; line-height: 1.2; }
+        .hero h1 span { color: var(--gold); }
+        .hero p { max-width: 750px; font-size: 1.1rem; opacity: 0.9; margin-bottom: 40px; font-weight: 300; }
 
-        /* --- STATS --- */
-        .stats-section { padding: 80px 20px; background: var(--anthracite); border-bottom: 1px solid #222; }
-        .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
-        .stat-card h2 { font-size: 3.2rem; color: var(--gold); margin-bottom: 10px; font-weight: 700; }
-        .stat-card p { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #ddd; }
+        .btn-main { 
+            background: var(--gold); color: #000; padding: 18px 40px; text-decoration: none; 
+            font-weight: 700; border-radius: 4px; text-transform: uppercase; font-size: 0.9rem;
+            transition: var(--transition); border: 2px solid var(--gold);
+        }
+        .btn-main:hover { background: transparent; color: var(--gold); transform: translateY(-3px); }
+
+        /* --- STATISTICS (The Counter) --- */
+        .stats-bar { background: var(--anthracite); padding: 60px 20px; border-bottom: 1px solid rgba(197, 160, 89, 0.1); }
+        .stats-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+        .stat-card h2 { font-size: 3rem; color: var(--gold); margin-bottom: 5px; }
+        .stat-card p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; }
 
         /* --- ABOUT --- */
-        .about-section { padding: 100px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .about-section h2 { color: var(--gold); margin-bottom: 30px; font-size: 2.2rem; text-transform: uppercase; }
-        .about-section p { font-size: 1.1rem; line-height: 1.8; color: #ccc; font-weight: 300; }
+        .about { padding: 100px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+        .about h2 { color: var(--gold); font-size: 2.2rem; margin-bottom: 30px; text-transform: uppercase; }
+        .about p { font-size: 1.1rem; color: #ccc; font-weight: 300; }
 
-        /* --- SERVICES SLIDER --- */
-        .services-container { padding: 100px 20px; background: #0c0e12; }
-        .slider-wrapper { max-width: 1200px; margin: 0 auto; overflow: hidden; }
-        .slider { display: flex; gap: 25px; overflow-x: auto; padding: 30px 5px; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--gold) transparent; }
-        .slider::-webkit-scrollbar { height: 5px; }
-        .slider::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+        /* --- SERVICES (As per your Image) --- */
+        .services { padding: 80px 20px; background: #0c0e12; }
+        .services-title { text-align: center; color: var(--gold); font-size: 2rem; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 3px; }
+        .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
         
-        .card { 
-            min-width: 320px; background: var(--dark-card); padding: 50px 30px; border-radius: 20px; 
-            text-align: center; border: 1px solid rgba(197, 160, 89, 0.1); scroll-snap-align: start;
-            transition: var(--transition);
+        .service-card { 
+            background: var(--anthracite); padding: 50px 30px; border-radius: 8px; text-align: center;
+            border: 1px solid rgba(255,255,255,0.03); transition: var(--transition); cursor: pointer;
         }
-        .card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .card i { font-size: 3.5rem; color: var(--gold); margin-bottom: 25px; }
-        .card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.2rem; text-transform: uppercase; }
-
-        /* --- CONTACT AREA --- */
-        .contact-info { padding: 100px 20px; text-align: center; background: var(--anthracite); }
-        .info-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; }
-        .info-item i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
-        .info-item h4 { margin-bottom: 10px; color: var(--gold); text-transform: uppercase; }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--gold); background: #1a1e24; }
+        .service-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 25px; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--gold); text-transform: uppercase; }
+        
+        /* Dropdown effect on hover */
+        .service-card .desc { 
+            max-height: 0; opacity: 0; overflow: hidden; transition: var(--transition); 
+            font-size: 0.9rem; color: #aaa; 
+        }
+        .service-card:hover .desc { max-height: 150px; opacity: 1; margin-top: 15px; }
 
         /* --- FOOTER --- */
-        footer { padding: 80px 20px; text-align: center; background: #050505; border-top: 1px solid #222; }
-        .footer-logo { height: 80px; margin-bottom: 30px; }
-        .social-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
-        .social-links a { color: var(--gold); font-size: 1.8rem; transition: var(--transition); }
-        .social-links a:hover { transform: scale(1.3); color: #fff; }
+        footer { padding: 80px 20px; text-align: center; background: var(--black); border-top: 1px solid #1a1a1a; }
+        .footer-logo { height: 70px; margin-bottom: 30px; }
+        
+        .social-icons { display: flex; justify-content: center; gap: 25px; margin-bottom: 30px; }
+        .social-icons a { color: var(--gold); font-size: 1.5rem; transition: 0.3s; }
+        .social-icons a:hover { transform: scale(1.2); color: #fff; }
 
-        @media (max-width: 768px) { .nav-links { display: none; } .hero-h1 { font-size: 1.8rem; } }
+        .lang-switcher { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
+        .lang-switcher label { cursor: pointer; opacity: 0.5; transition: 0.3s; }
+        .lang-switcher label img { width: 30px; border-radius: 3px; }
+        #lang-arm:checked ~ * .f-arm, #lang-ru:checked ~ * .f-ru, #lang-en:checked ~ * .f-en { opacity: 1; transform: translateY(-5px); }
+
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 1.6rem; } }
     </style>
 </head>
 <body>
@@ -118,117 +116,166 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo-box">
-                <img src="photo_5372924575026454378_x.jpg" alt="KAR ARM LOGISTICS">
+            <div class="logo">
+                <img src="photo_5372924575026454378_x.jpg" alt="KAR ARM GROUP">
             </div>
-            
-            <div class="nav-right">
-                <div class="address-top">TUMANYAN 8, YEREVAN, ARMENIA</div>
-                <div class="menu-row">
-                    <nav class="nav-links">
-                        <a href="#about" class="lang-arm">Մեր Մասին</a>
-                        <a href="#about" class="lang-ru">О нас</a>
-                        <a href="#about" class="lang-en">About</a>
+            <nav class="nav-links">
+                <a href="#about" class="lang-arm">Մեր մասին</a>
+                <a href="#services" class="lang-arm">Ծառայություններ</a>
+                <a href="#contact" class="lang-arm">Կապ</a>
+                
+                <a href="#about" class="lang-ru">О нас</a>
+                <a href="#services" class="lang-ru">Услуги</a>
+                <a href="#contact" class="lang-ru">Контакты</a>
 
-                        <a href="#services" class="lang-arm">Ծառայություններ</a>
-                        <a href="#services" class="lang-ru">Услуги</a>
-                        <a href="#services" class="lang-en">Services</a>
-
-                        <a href="#contact" class="lang-arm">Կապ</a>
-                        <a href="#contact" class="lang-ru">Контакты</a>
-                        <a href="#contact" class="lang-en">Contact</a>
-                    </nav>
-                    
-                    <a href="tel:+37400000000" class="btn-call">
-                        <span class="lang-arm">Անվճար Խորհրդատվություն</span>
-                        <span class="lang-ru">Бесплатная консультация</span>
-                        <span class="lang-en">Free Consultation</span>
-                    </a>
-
-                    <div class="flag-switcher">
-                        <label for="lang-arm" class="f-arm"><img src="https://flagcdn.com/w80/am.png" alt="ARM"></label>
-                        <label for="lang-ru" class="f-ru"><img src="https://flagcdn.com/w80/ru.png" alt="RU"></label>
-                        <label for="lang-en" class="f-en"><img src="https://flagcdn.com/w80/us.png" alt="EN"></label>
-                    </div>
-                </div>
-            </div>
+                <a href="#about" class="lang-en">About</a>
+                <a href="#services" class="lang-en">Services</a>
+                <a href="#contact" class="lang-en">Contact</a>
+            </nav>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-h1 lang-arm">ՎՍՏԱՀԵԼԻ ԼՈԳԻՍՏԻԿԱ<br><span style="color:var(--gold)">ԱՆՍԱՀՄԱՆԱՓԱԿ ՀՆԱՐԱՎՈՐՈՒԹՅՈՒՆՆԵՐ</span></h1>
-            <h1 class="hero-h1 lang-ru">НАДЕЖНАЯ ЛОГИСТИКА<br><span style="color:var(--gold)">БЕЗГРАНИЧНЫЕ ВОЗМОЖНОСТИ</span></h1>
-            <h1 class="hero-h1 lang-en">RELIABLE LOGISTICS<br><span style="color:var(--gold)">LIMITLESS POSSIBILITIES</span></h1>
-        </div>
+        <h1 class="lang-arm">Միջազգային Բեռնափոխադրումների<br><span>Պրոֆեսիոնալ Լուծումներ</span></h1>
+        <h1 class="lang-ru">Профессиональные Решения<br><span>Международных Перевозок</span></h1>
+        <h1 class="lang-en">Professional Solutions for<br><span>International Logistics</span></h1>
+        
+        <p class="lang-arm">Ձեր բեռների անվտանգ տեղափոխումը մեր մասնագիտացված տեխնիկական հագեցվածությամբ՝ ապահովելով կայուն կապ Հայաստանի և արտաքին շուկաների միջև։</p>
+        <p class="lang-ru">Безопасная перевозка ваших грузов с нашим специализированным оборудованием, обеспечивающим стабильную связь между Арменией и внешними рынками.</p>
+        <p class="lang-en">Safe transportation of your cargo with our specialized equipment, ensuring a stable connection between Armenia and foreign markets.</p>
+
+        <a href="tel:+37400000000" class="btn-main lang-arm">Անվճար Խորհրդատվություն</a>
+        <a href="tel:+37400000000" class="btn-main lang-ru">Бесплатная Консультация</a>
+        <a href="tel:+37400000000" class="btn-main lang-en">Free Consultation</a>
     </section>
 
-    <section class="stats-section">
+    <section class="stats-bar">
         <div class="stats-grid">
-            <div class="stat-card"><h2>15+</h2><p class="lang-arm">Տարվա Փորձ</p><p class="lang-ru">Лет Опыта</p><p class="lang-en">Years Experience</p></div>
-            <div class="stat-card"><h2>5000+</h2><p class="lang-arm">Փոխադրումներ</p><p class="lang-ru">Перевозок</p><p class="lang-en">Deliveries</p></div>
-            <div class="stat-card"><h2>100%</h2><p class="lang-arm">Ապահովագրություն</p><p class="lang-ru">Страхование</p><p class="lang-en">Insurance</p></div>
-            <div class="stat-card"><h2>24/7</h2><p class="lang-arm">Կապ Մեզ Հետ</p><p class="lang-ru">На Связи</p><p class="lang-en">Support</p></div>
-        </div>
-    </section>
-
-    <section class="about-section" id="about">
-        <h2 class="lang-arm">Մեր Մասին</h2>
-        <h2 class="lang-ru">О Нас</h2>
-        <h2 class="lang-en">About Us</h2>
-        <p class="lang-arm">KAR ARM LOGISTICS GROUP-ը հանդիսանում է բեռնափոխադրումների ոլորտի առաջատարներից մեկը: 15 տարվա փորձառությունը թույլ է տալիս մեզ մատուցել բարձրորակ ծառայություններ՝ ապահովելով յուրաքանչյուր բեռի անվտանգությունը և անխաթար հասանելիությունը:</p>
-        <p class="lang-ru">KAR ARM LOGISTICS GROUP является одним из лидеров в сфере грузоперевозок. 15-летний опыт позволяет нам предоставлять высококачественные услуги, обеспечивая безопасность и своевременную доставку каждого груза.</p>
-        <p class="lang-en">KAR ARM LOGISTICS GROUP is one of the leaders in the field of freight transportation. 15 years of experience allows us to provide high-quality services, ensuring the safety and seamless delivery of every cargo.</p>
-    </section>
-
-    <section class="services-container" id="services">
-        <div class="slider-wrapper">
-            <h2 style="text-align:center; color:var(--gold); margin-bottom:50px; text-transform:uppercase;">
-                <span class="lang-arm">Մեր Ծառայությունները</span>
-                <span class="lang-ru">Наши Услуги</span>
-                <span class="lang-en">Our Services</span>
-            </h2>
-            <div class="slider">
-                <div class="card"><i class="fas fa-boxes"></i><h3 class="lang-arm">Հավաքական</h3><h3 class="lang-ru">Сборные</h3><h3 class="lang-en">LTL / Pallets</h3><p>Safe & Fast</p></div>
-                <div class="card"><i class="fas fa-biohazard"></i><h3 class="lang-arm">Վտանգավոր</h3><h3 class="lang-ru">Опасные</h3><h3 class="lang-en">ADR Goods</h3><p>Professional Care</p></div>
-                <div class="card"><i class="fas fa-snowflake"></i><h3 class="lang-arm">Սառցե ռեժիմ</h3><h3 class="lang-ru">Рефрижератор</h3><h3 class="lang-en">Refrigerated</h3><p>Temperature Control</p></div>
-                <div class="card"><i class="fas fa-truck"></i><h3 class="lang-arm">Տենտային</h3><h3 class="lang-ru">Тентовые</h3><h3 class="lang-en">Tilt Trucking</h3><p>Standard Freight</p></div>
+            <div class="stat-card">
+                <h2 class="counter" data-target="9">0</h2>
+                <p class="lang-arm">Տարվա Փորձ</p><p class="lang-ru">Лет Опыта</p><p class="lang-en">Years of Exp</p>
+            </div>
+            <div class="stat-card">
+                <h2 class="counter" data-target="5000">0</h2>
+                <p class="lang-arm">Փոխադրում</p><p class="lang-ru">Перевозок</p><p class="lang-en">Total Freight</p>
+            </div>
+            <div class="stat-card">
+                <h2 class="counter" data-target="100">0</h2>
+                <p class="lang-arm">Ապահովագրություն %</p><p class="lang-ru">Страхование %</p><p class="lang-en">Insurance %</p>
+            </div>
+            <div class="stat-card">
+                <h2>24/7</h2>
+                <p class="lang-arm">Կապ մեզ հետ</p><p class="lang-ru">На связи</p><p class="lang-en">Support</p>
             </div>
         </div>
     </section>
 
-    <section class="contact-info" id="contact">
-        <div class="info-grid">
-            <div class="info-item">
-                <i class="fas fa-map-marked-alt"></i>
-                <h4 class="lang-arm">Հասցե</h4><h4 class="lang-ru">Адрес</h4><h4 class="lang-en">Address</h4>
-                <p>Armenia, Yerevan, Tumanyan 8</p>
+    <section class="about" id="about">
+        <h2 class="lang-arm">9 Տարվա Փորձ և Վստահություն</h2>
+        <h2 class="lang-ru">9 Лет Опыта и Доверия</h2>
+        <h2 class="lang-en">9 Years of Excellence</h2>
+        <p class="lang-arm">KAR ARM GROUP-ը հիմնադրման օրվանից որդեգրել է որակի և անվտանգության ամենաբարձր չափանիշները։ Անցած 9 տարիների ընթացքում մենք կառուցել ենք ամուր լոգիստիկ ցանց, որը թույլ է տալիս իրականացնել բարդ փոխադրումներ հեշտությամբ։ Մեր փորձը Ձեր բեռի անվտանգության երաշխիքն է։</p>
+        <p class="lang-ru">С момента основания KAR ARM GROUP придерживается самых высоких стандартов качества и безопасности. За последние 9 лет мы построили прочную логистическую сеть, позволяющую с легкостью осуществлять сложные перевозки. Наш опыт – залог безопасности вашего груза.</p>
+        <p class="lang-en">Since its foundation, KAR ARM GROUP has adopted the highest standards of quality and safety. Over the past 9 years, we have built a solid logistical network that allows us to carry out complex transportations with ease. Our experience is the guarantee of your cargo's safety.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="services-title lang-arm">Ծառայություններ</h2>
+        <h2 class="services-title lang-ru">Наши Услуги</h2>
+        <h2 class="services-title lang-en">Our Services</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-truck"></i>
+                <h3 class="lang-arm">Ամբողջական (FTL)</h3><h3 class="lang-ru">Полные (FTL)</h3><h3 class="lang-en">Full Truck (FTL)</h3>
+                <div class="desc lang-arm">Մեծածավալ բեռների արագ և ուղիղ առաքում առանձին մեքենայով դեպի նշանակման կետ։</div>
+                <div class="desc lang-ru">Быстрая и прямая доставка крупных партий грузов отдельным автомобилем.</div>
+                <div class="desc lang-en">Fast and direct delivery of large cargo using dedicated vehicles.</div>
             </div>
-            <div class="info-item">
-                <i class="fas fa-phone-alt"></i>
-                <h4 class="lang-arm">Հեռախոս</h4><h4 class="lang-ru">Телефон</h4><h4 class="lang-en">Phone</h4>
-                <p>+374 XX XX XX XX</p>
+
+            <div class="service-card">
+                <i class="fas fa-trailer"></i>
+                <h3 class="lang-arm">Տենտային</h3><h3 class="lang-ru">Тентовые</h3><h3 class="lang-en">Tilt Trailer</h3>
+                <div class="desc lang-arm">Մասնագիտացված տենտային մեքենաներ տարբեր տեսակի ստանդարտ բեռների համար։</div>
+                <div class="desc lang-ru">Специализированные тентовые машины для различных видов стандартных грузов.</div>
+                <div class="desc lang-en">Standard curtain-side trailers for versatile cargo transportation.</div>
             </div>
-            <div class="info-item">
-                <i class="fas fa-envelope"></i>
-                <h4>Email</h4>
-                <p>info@kararmgroup.am</p>
+
+            <div class="service-card">
+                <i class="fas fa-boxes"></i>
+                <h3 class="lang-arm">Հավաքական (LTL)</h3><h3 class="lang-ru">Сборные (LTL)</h3><h3 class="lang-en">Groupage (LTL)</h3>
+                <div class="desc lang-arm">Փոքր բեռների օպտիմալ խմբավորում՝ ապահովելով մատչելի և ապահով տեղափոխում։</div>
+                <div class="desc lang-ru">Оптимальная консолидация мелких грузов для экономичной перевозки.</div>
+                <div class="desc lang-en">Smart consolidation of smaller shipments for cost-effective delivery.</div>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-snowflake"></i>
+                <h3 class="lang-arm">Ռեֆրիժերատորային</h3><h3 class="lang-ru">Рефрижераторные</h3><h3 class="lang-en">Refrigerated</h3>
+                <div class="desc lang-arm">Ջերմաստիճանային հատուկ ռեժիմի պահպանում սննդի և դեղորայքի համար։</div>
+                <div class="desc lang-ru">Поддержание температурного режима для продуктов питания и медикаментов.</div>
+                <div class="desc lang-en">Specialized temperature control for food, plants, and medicine.</div>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-biohazard"></i>
+                <h3 class="lang-arm">Վտանգավոր բեռներ (ADR)</h3><h3 class="lang-ru">Опасные грузы (ADR)</h3><h3 class="lang-en">Dangerous (ADR)</h3>
+                <div class="desc lang-arm">Վտանգավոր դասի բեռների լիցենզավորված և անվտանգ փոխադրում։</div>
+                <div class="desc lang-ru">Лицензированная и безопасная перевозка опасных грузов всех классов.</div>
+                <div class="desc lang-en">Certified and safe transport for all classes of hazardous materials.</div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer id="contact">
         <img src="photo_5372924575026454378_x.jpg" alt="Logo" class="footer-logo">
         
-        <div class="social-links">
-            <a href="https://instagram.com/ձեր_անունը" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com/ձեր_անունը" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://wa.me/37400000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="viber://chat?number=37400000000" target="_blank"><i class="fab fa-viber"></i></a>
         </div>
-        
-        <p style="color:var(--gold); font-size: 0.8rem; letter-spacing: 1px;">&copy; 2026 KAR ARM LOGISTICS GROUP. SINCE 2011.</p>
+
+        <div class="lang-switcher">
+            <label for="lang-arm" class="f-arm"><img src="https://flagcdn.com/w40/am.png" alt="ARM"></label>
+            <label for="lang-ru" class="f-ru"><img src="https://flagcdn.com/w40/ru.png" alt="RU"></label>
+            <label for="lang-en" class="f-en"><img src="https://flagcdn.com/w40/us.png" alt="EN"></label>
+        </div>
+
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 KAR ARM GROUP | 9 Years of Trust</p>
     </footer>
+
+    <script>
+        // Number Counter Logic (Triggered on Scroll)
+        const counters = document.querySelectorAll('.counter');
+        const speed = 100; // Ավելի մեծ թիվ = ավելի դանդաղ հաշվարկ
+
+        const startCount = (entry) => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target + (target === 100 ? '%' : '+');
+                    }
+                };
+                updateCount();
+                observer.unobserve(counter); // Դադարեցնում ենք հետևելը հաշվարկից հետո
+            }
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(startCount);
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
+    </script>
 
 </body>
 </html>
