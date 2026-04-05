@@ -3,132 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAR ARM LOGISTICS GROUP</title>
+    <title>KAR ARM LOGISTICS GROUP | Միջազգային Բեռնափոխադրումներ</title>
+    <link rel="icon" type="image/jpg" href="photo_5372924575026454378_x.jpg">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+Armenian:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
+        /* --- CSS VARIABLES & RESET --- */
         :root {
             --gold: #c5a059;
-            --black: #050505;
-            --soft-black: #111111;
+            --black: #0f0f0f;
+            --dark-grey: #1a1a1a;
+            --light-grey: #f4f4f4;
             --white: #ffffff;
+            --transition: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Noto Sans Armenian', sans-serif; background-color: var(--black); color: var(--white); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* HEADER */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background-color: var(--black);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background: rgba(15, 15, 15, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
         nav {
-            padding: 15px 8%;
-            display: flex; justify-content: space-between; align-items: center;
-            background: var(--black);
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-            border-bottom: 2px solid var(--gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .logo-area img { height: 60px; width: auto; }
-        .nav-right { text-align: right; }
-        .nav-right b { color: var(--gold); font-size: 1.1rem; display: block; }
-        .nav-right a { color: var(--white); text-decoration: none; font-weight: bold; }
 
-        /* HERO */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 50px;
+            border-radius: 4px;
+        }
+
+        .address-info {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Language Switcher Style */
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+            border-left: 1px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        .lang-switch span {
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 700;
+            opacity: 0.6;
+        }
+
+        .lang-switch span:hover, .lang-switch span.active {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        /* --- HERO SECTION --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://raw.githubusercontent.com/Anul-Accessories/Lunera/main/truck_lars_summer.jpg') no-repeat center center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('photo_5372924575026454377_y.jpg');
             background-size: cover;
-            display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 10%;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
         }
-        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase; margin-bottom: 20px; }
-        .hero h1 span { color: var(--gold); }
 
-        /* ABOUT */
-        .section { padding: 100px 10%; }
-        .about-box { border-left: 5px solid var(--gold); padding-left: 30px; }
-        .about-box h2 { color: var(--gold); font-size: 2.5rem; margin-bottom: 20px; }
-        .about-box p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 15px; }
+        .hero-content {
+            max-width: 900px;
+        }
 
-        /* SERVICES (Dropdown Style) */
-        .service-item { background: var(--soft-black); margin-bottom: 10px; border: 1px solid #222; border-radius: 5px; }
-        .service-header { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; color: var(--gold); font-weight: bold; font-size: 1.3rem; }
-        .service-content { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.4s; color: #ccc; }
-        .service-item.active .service-content { padding: 20px; max-height: 500px; }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
 
-        /* CONTACT BLOCKS */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 50px; }
-        .c-card { background: var(--soft-black); padding: 40px; text-align: center; border: 1px solid var(--gold); border-radius: 10px; }
-        .c-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
-        .c-card a { color: var(--white); text-decoration: none; font-size: 1.2rem; font-weight: bold; }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: #ddd;
+            font-weight: 300;
+        }
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: var(--gold); font-weight: bold; }
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-weight: 700;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav { flex-direction: column; text-align: center; } }
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            background-color: #e2b86a;
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+        }
+
+        /* --- ABOUT SECTION --- */
+        .section {
+            padding: 100px 0;
+        }
+
+        .about {
+            background-color: var(--dark-grey);
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features {
+            background-color: var(--black);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact {
+            background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url('photo_5372924575026454377_y.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item h4 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px 0;
+            background: var(--black);
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .social-icons a {
+            width: 45px;
+            height: 45px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* In a real app, you'd add a hamburger menu toggle */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo-area">
-            <img src="logo.png" alt="KAR ARM LOGISTICS">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-area">
+                    <img src="photo_5372924575026454378_x.jpg" alt="KAR ARM Logo">
+                    <span class="address-info">TUMANYAN 8</span>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#about">Մեր Մասին</a>
+                    <a href="#services">Ծառայություններ</a>
+                    <a href="#contact">Կապ</a>
+                    <div class="lang-switch">
+                        <span class="active">ARM</span>
+                        <span>RUS</span>
+                        <span>ENG</span>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <div class="nav-right">
-            <b><i class="fa-solid fa-location-dot"></i> Թումանյան 8, Երևան</b>
-            <a href="tel:+37495211121">Զանգահարել՝ +374 95 211 121</a>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <h1>KAR ARM <span>LOGISTICS GROUP</span></h1>
     </header>
 
-    <section class="section" id="about">
-        <div class="about-box">
-            <h2>Մեր Մասին</h2>
-            <p><b>KAR ARM LOGISTICS GROUP</b>-ն ունի <b>9 տարվա</b> հարուստ փորձ միջազգային բեռնափոխադրումների ոլորտում։ Մենք ապահովում ենք կայծակնային արագություն և անվտանգություն։</p>
-            <p>Յուրաքանչյուր խնդիր, հատկապես Վերին Լարսի անցակետում, լուծվում է օպերատիվ և պրոֆեսիոնալ կերպով։</p>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>ՄԻՋԱԶԳԱՅԻՆ ԲԵՌՆԱՓՈԽԱԴՐՈՒՄՆԵՐԻ ՊՐՈՖԵՍԻՈՆԱԼ ԼՈՒԾՈՒՄՆԵՐ</h1>
+                <p>Ձեր բեռների անվտանգ տեղափոխումը մեր մասնագիտացված տեխնիկական հագեցվածությամբ՝ ապահովելով կայուն կապ Հայաստանի և արտաքին շուկաների միջև։</p>
+                <a href="#contact" class="btn-gold">Կապնվել Մեզ Հետ</a>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 style="color: var(--gold); margin-bottom: 30px;">Ծառայություններ</h2>
-        <div class="service-item" onclick="this.classList.toggle('active')">
-            <div class="service-header">Տենտային փոխադրումներ <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="service-content">Մասնագիտացված ենք փայտանյութի, շինանյութի և տարբեր բեռների փոխադրման մեջ։</div>
-        </div>
-        <div class="service-item" onclick="this.classList.toggle('active')">
-            <div class="service-header">Ամբողջական բեռներ <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="service-content">Առանձին բեռնատարներ՝ Ձեր բեռի արագ և ուղիղ առաքման համար։</div>
-        </div>
-        <div class="service-item" onclick="this.classList.toggle('active')">
-            <div class="service-header">Հավաքական բեռներ <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="service-content">Խնայող տարբերակ փոքր ծավալի բեռների համար։</div>
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">KAR ARM LOGISTICS GROUP</h2>
+            <div class="about-text">
+                <p>Մենք հանդիսանում ենք բեռնափոխադրումների ոլորտում առաջատար ընկերություն, որն ապահովում է անվտանգություն, արագություն և վստահելիություն։ Մեր փորձառու թիմը և ժամանակակից տեխնիկան երաշխավորում են Ձեր բեռի անխաթար հասանելիությունը աշխարհի ցանկացած կետից։</p>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 style="color: var(--gold); text-align: center;">Կոնտակտներ</h2>
-        <div class="contact-grid">
-            <div class="c-card">
-                <i class="fa-solid fa-phone-volume"></i>
-                <p>Աջակցություն 24/7</p>
-                <a href="tel:+37495211121">+374 95 211 121</a>
+    <section class="section features" id="services">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Մեր Առավելությունները</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-truck-moving"></i>
+                    <h3>Արագ Առաքում</h3>
+                    <p>Օպտիմալ երթուղիների մշակում՝ ժամանակի խնայողության համար։</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Ապահովություն</h3>
+                    <p>Բեռների լիարժեք ապահովագրություն և անվտանգության երաշխիք։</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Լոգիստիկ Ցանց</h3>
+                    <p>Կապ Հայաստանի և միջազգային խոշորագույն շուկաների միջև։</p>
+                </div>
             </div>
-            <div class="c-card">
-                <i class="fa-solid fa-envelope"></i>
-                <p>Էլ. Փոստ</p>
-                <a href="mailto:info@kararm.am">info@kararm.am</a>
-            </div>
-            <div class="c-card">
-                <i class="fa-solid fa-map-pin"></i>
-                <p>Հասցե</p>
-                <a href="#">Թումանյան 8, Երևան</a>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Հետադարձ Կապ</h2>
+            <p>Մենք պատրաստ ենք պատասխանել Ձեր բոլոր հարցերին</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Հասցե</h4>
+                    <p>Թումանյան 8, Երևան, Հայաստան</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Հեռախոս</h4>
+                    <p>+374 (XX) XX-XX-XX</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Էլ․ Փոստ</h4>
+                    <p>info@kararmgroup.am</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        © 2026 KAR ARM LOGISTICS GROUP | Թումանյան 8
+        <div class="container">
+            <img src="photo_5372924575026454378_x.jpg" alt="Logo" style="height: 60px; margin: 0 auto 20px; border-radius: 5px;">
+            <p>Միացեք մեզ սոցիալական հարթակներում</p>
+            
+            <div class="social-icons">
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" title="Viber"><i class="fab fa-viber"></i></a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 KAR ARM LOGISTICS GROUP. All rights reserved.
+            </div>
+        </div>
     </footer>
 
 </body>
